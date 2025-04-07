@@ -1,16 +1,232 @@
-<html>
-  <head>
-    <title>Rahul Raveendran</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-  </head>
-  <body class="container">
-    <div class="d-flex justify-content-center">
-      <h2>Rahul Raveendran V P</h2>
-      <p>I am an experienced Technical Lead with a demonstrated history of working in the computer software industry. Skilled in Android. Strong engineering professional with a Master of Computer Applications (MCA) focused in Computer Application from National Institute of Technology Calicut.</p>
-      <a href="https://github.com/rahulrvp">GitHub</a> • 
-      <a href="https://www.linkedin.com/in/rahulrvp/">Linkedin</a> • 
-      <a href="https://stackoverflow.com/users/1987045/rahul-raveendran/">Stack Overflow</a> •
-      <a href="https://www.hackerrank.com/rahulrvp/">Hacker Rank</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul Raveendran V P</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f9f7f7;
+            --text-color: #333;
+            --accent-color: #dfcee5;
+            --highlight-color: #a7c5eb;
+            --border-color: #e6e6e6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+        }
+        
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+        
+        .title {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+            background-color: var(--highlight-color);
+        }
+        
+        .social-links i {
+            font-size: 1.5rem;
+        }
+        
+        .about {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--highlight-color);
+        }
+        
+        h2 {
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .about p {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="img/profile-pic.jpeg" alt="Rahul's Profile Picture" class="profile-image">
+            <h1>Rahul Raveendran V P</h1>
+            <p class="title">Lead Android SDK Engineer @ Blueshift</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/rahulrvp" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/rahulrvp" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://medium.com/@rahulrvp" target="_blank" title="Medium">
+                    <i class="fab fa-medium-m"></i>
+                </a>
+                <a href="https://g.dev/rahulrvp" target="_blank" title="Google Developer Profile">
+                    <i class="fab fa-google"></i>
+                </a>
+            </div>
+        </header>
+        
+        <section class="about">
+            <h2>About Me</h2>
+            <p>I'm a Technical Lead with <span id="yearsOfExperience"></span> years of experience in mobile development, currently leading Android SDK engineering at Blueshift where I focus on designing, developing, and maintaining our Android SDK and other cross-platform plugins. With an MCA from NIT Calicut, I bring a strong academic foundation to my technical expertise in building robust mobile solutions.</p>
+
+            <p>Previously at Fortelogic and Bullfinch, I led engineering teams across EduTech, MedTech, E-commerce, and TravelTech domains. Throughout my career, I've maintained hands-on development expertise in Android (Java/Kotlin), Flutter, and multiple cross-platform technologies. I'm passionate about creating high-quality mobile experiences that solve real business challenges while maintaining optimal performance and scalability.</p>
+            
+            <div class="skills">
+                <span class="skill-tag">Android (Java/Kotlin)</span>
+                <span class="skill-tag">iOS (Beginer)</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">Flutter</span>
+                <span class="skill-tag">React Native</span>
+                <span class="skill-tag">Ruby on Rails</span>
+                <span class="skill-tag">AI</span>
+            </div>
+        </section>
+        
+        <footer>
+            <p>© 2025 Rahul Raveendran V P. All rights reserved.</p>
+        </footer>
     </div>
-  </body>
+    <script>
+        function calculateYearsOfExperience() {
+            const startDate = new Date('2013-06-01');
+            const currentDate = new Date();
+            
+            let years = currentDate.getFullYear() - startDate.getFullYear();
+            const monthDiff = currentDate.getMonth() - startDate.getMonth();
+            
+            // Adjust years if we haven't reached the anniversary month yet
+            if (monthDiff < 0 || (monthDiff === 0 && currentDate.getDate() < startDate.getDate())) {
+                years--;
+            }
+            
+            document.getElementById('yearsOfExperience').textContent = years;
+        }
+        
+        // Calculate on page load
+        calculateYearsOfExperience();
+    </script>
+</body>
 </html>
