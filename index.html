@@ -3,230 +3,525 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahul Raveendran V P</title>
-    <!-- Font Awesome for icons -->
+    <title>Rahul Raveendran V P - Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Google+Sans+Text:wght@400;500&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #f9f7f7;
-            --text-color: #333;
-            --accent-color: #dfcee5;
-            --highlight-color: #a7c5eb;
-            --border-color: #e6e6e6;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
         
+        :root {
+            --google-blue: #4285F4;
+            --google-red: #EA4335;
+            --google-yellow: #FBBC04;
+            --google-green: #34A853;
+            --background: #F8F9FA;
+            --surface: #FFFFFF;
+            --text-primary: #202124;
+            --text-secondary: #1d4c85;
+            --border: #DADCE0;
+        }
+        
         body {
-            font-family: 'Lato', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            font-family: 'Google Sans Text', 'Roboto', sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
             line-height: 1.6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--google-blue) 0%, #5E97F6 100%);
+            color: white;
+            padding: 80px 20px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: 10%;
+            width: 300px;
+            height: 300px;
+            background: var(--google-red);
+            opacity: 0.15;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -15%;
+            left: 5%;
+            width: 250px;
+            height: 250px;
+            background: var(--google-yellow);
+            opacity: 0.15;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+        
+        .circle-decoration {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: var(--google-green);
+            opacity: 0.12;
+            border-radius: 50%;
+            top: 50%;
+            left: -5%;
+            animation: float 7s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
         
         .container {
-            max-width: 900px;
-            width: 100%;
-            background-color: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            padding: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
         }
         
-        header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-        
-        .profile-image {
+        .profile-pic {
             width: 180px;
             height: 180px;
             border-radius: 50%;
+            background: white;
+            border: 4px solid rgba(255,255,255,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border: 5px solid var(--accent-color);
-            margin-bottom: 1.5rem;
         }
         
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-color);
+        .profile-name {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 48px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
         
-        .title {
-            font-size: 1.25rem;
-            color: #666;
-            margin-bottom: 1.5rem;
+        .profile-role {
+            font-size: 20px;
+            opacity: 0.95;
+            margin-bottom: 32px;
+            font-weight: 400;
         }
         
         .social-links {
             display: flex;
+            gap: 16px;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
+            flex-wrap: wrap;
         }
         
-        .social-links a {
+        .social-link {
+            width: 48px;
+            height: 48px;
+            border-radius: 24px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: var(--accent-color);
-            color: var(--text-color);
-            transition: all 0.3s ease;
             text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 20px;
         }
         
-        .social-links a:hover {
-            transform: translateY(-5px);
-            background-color: var(--highlight-color);
+        .social-link:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-4px);
         }
         
-        .social-links i {
-            font-size: 1.5rem;
+        .content {
+            max-width: 1000px;
+            margin: -40px auto 0;
+            padding: 0 20px 60px;
+            position: relative;
+            z-index: 2;
         }
         
-        .about {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            margin-bottom: 2rem;
-            border-left: 4px solid var(--highlight-color);
+        .card {
+            background: var(--surface);
+            border-radius: 24px;
+            padding: 48px;
+            margin-bottom: 24px;
+            box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         
-        h2 {
-            font-size: 1.75rem;
-            margin-bottom: 1rem;
-            color: var(--text-color);
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, 
+            var(--google-blue) 0%, 
+            var(--google-red) 33%, 
+            var(--google-yellow) 66%, 
+            var(--google-green) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
         
-        .about p {
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 1rem;
+        .card:hover::before {
+            opacity: 1;
         }
         
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            margin-top: 1.5rem;
+        .card:hover {
+            box-shadow: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+            transform: translateY(-2px);
         }
         
-        .skill-tag {
-            background-color: var(--accent-color);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
+        .section-title {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 32px;
             font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            letter-spacing: -0.5px;
+        }
+        
+        .section-title i {
+            font-size: 28px;
+        }
+        
+        .card:nth-child(1) .section-title i {
+            color: var(--google-blue);
+        }
+        
+        .card:nth-child(2) .section-title i {
+            color: var(--google-red);
+        }
+        
+        .card:nth-child(3) .section-title i {
+            color: var(--google-green);
+        }
+        
+        .section-content {
+            color: var(--text-secondary);
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .section-content p {
+            margin-bottom: 16px;
+        }
+        
+        .section-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .highlight {
+            color: var(--google-blue);
+            font-weight: 500;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+            margin-top: 8px;
+        }
+        
+        .skill-chip {
+            background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+            border: 2px solid var(--border);
+            color: var(--text-primary);
+            padding: 16px 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-family: 'Google Sans', sans-serif;
+            position: relative;
+        }
+        
+        .skill-chip:nth-child(4n+1):hover {
+            border-color: var(--google-blue);
+            box-shadow: 0 4px 8px rgba(66,133,244,0.2);
+        }
+        
+        .skill-chip:nth-child(4n+2):hover {
+            border-color: var(--google-red);
+            box-shadow: 0 4px 8px rgba(234,67,53,0.2);
+        }
+        
+        .skill-chip:nth-child(4n+3):hover {
+            border-color: var(--google-yellow);
+            box-shadow: 0 4px 8px rgba(251,188,4,0.2);
+        }
+        
+        .skill-chip:nth-child(4n+4):hover {
+            border-color: var(--google-green);
+            box-shadow: 0 4px 8px rgba(52,168,83,0.2);
+        }
+        
+        .skill-chip:hover {
+            transform: translateY(-4px);
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 24px;
+            background: linear-gradient(135deg, #F8F9FA 0%, #FFFFFF 100%);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin-top: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info:hover {
+            border-color: var(--google-green);
+            box-shadow: 0 4px 8px rgba(52,168,83,0.1);
+        }
+        
+        .contact-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 28px;
+            background: linear-gradient(135deg, var(--google-green), #5BB974);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+        
+        .contact-details a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 500;
+            font-family: 'Google Sans', sans-serif;
+            transition: color 0.3s ease;
+        }
+        
+        .contact-details a:hover {
+            color: var(--google-green);
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 60px 20px 40px;
+            }
+            
+            .profile-pic {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .profile-name {
+                font-size: 36px;
+            }
+            
+            .profile-role {
+                font-size: 18px;
+            }
+            
+            .card {
+                padding: 32px 24px;
+                border-radius: 16px;
+            }
+            
+            .section-title {
+                font-size: 26px;
+            }
+            
+            .section-content {
+                font-size: 16px;
+            }
+            
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+                gap: 12px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .content {
+                margin-top: -30px;
+                padding-bottom: 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .profile-name {
+                font-size: 28px;
+            }
+            
+            .profile-role {
+                font-size: 16px;
+            }
         }
         
         footer {
             text-align: center;
-            margin-top: 2rem;
-            color: #888;
-            font-size: 0.9rem;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 1.5rem;
-            }
-            
-            .profile-image {
-                width: 150px;
-                height: 150px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
+            padding: 40px 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="img/rahul.jpeg" alt="Rahul's Profile Picture" class="profile-image">
-            <h1>Rahul Raveendran V P</h1>
-            <p class="title">Lead Android SDK Engineer @ Blueshift</p>
-            
+    <!-- Header Section -->
+    <div class="header">
+        <div class="circle-decoration"></div>
+        <div class="container">
+            <div class="profile-pic">
+                <img src="https://github.com/rahulrvp.png" alt="Rahul Raveendran V P" id="profileImage">
+            </div>
+            <h1 class="profile-name">Rahul Raveendran V P</h1>
+            <p class="profile-role">Senior Software Engineer @ Mixpanel</p>
             <div class="social-links">
-                <a href="https://github.com/rahulrvp" target="_blank" title="GitHub">
+                <a href="https://github.com/rahulrvp" class="social-link" target="_blank" aria-label="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
-                <a href="https://linkedin.com/in/rahulrvp" target="_blank" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/rahulrvp" class="social-link" target="_blank" aria-label="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://medium.com/@rahulrvp" target="_blank" title="Medium">
-                    <i class="fab fa-medium-m"></i>
+                <a href="https://medium.com/@rahulrvp" class="social-link" target="_blank" aria-label="Medium">
+                    <i class="fab fa-medium"></i>
                 </a>
-                <a href="https://g.dev/rahulrvp" target="_blank" title="Google Developer Profile">
+                <a href="https://g.dev/rahulrvp" class="social-link" target="_blank" aria-label="Google Developer Profile">
                     <i class="fab fa-google"></i>
                 </a>
             </div>
-        </header>
-        
-        <section class="about">
-            <h2>About Me</h2>
-            <p>I'm a Technical Lead with <span id="yearsOfExperience"></span> years of experience in mobile development, currently leading Android SDK engineering at Blueshift where I focus on designing, developing, and maintaining our Android SDK and other cross-platform plugins. With an MCA from NIT Calicut, I bring a strong academic foundation to my technical expertise in building robust mobile solutions.</p>
-
-            <p>Previously at Fortelogic and Bullfinch, I led engineering teams across EduTech, MedTech, E-commerce, and TravelTech domains. Throughout my career, I've maintained hands-on development expertise in Android (Java/Kotlin), Flutter, and multiple cross-platform technologies. I'm passionate about creating high-quality mobile experiences that solve real business challenges while maintaining optimal performance and scalability.</p>
-            
-            <div class="skills">
-                <span class="skill-tag">Android (Java/Kotlin)</span>
-                <span class="skill-tag">iOS (Beginer)</span>
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">Flutter</span>
-                <span class="skill-tag">React Native</span>
-                <span class="skill-tag">Ruby on Rails</span>
-                <span class="skill-tag">AI</span>
-            </div>
-        </section>
-        
-        <footer>
-            <p>© 2025 Rahul Raveendran V P. All rights reserved.</p>
-        </footer>
+        </div>
     </div>
-    <script>
-        function calculateYearsOfExperience() {
-            const startDate = new Date('2013-06-01');
-            const currentDate = new Date();
-            
-            let years = currentDate.getFullYear() - startDate.getFullYear();
-            const monthDiff = currentDate.getMonth() - startDate.getMonth();
-            
-            // Adjust years if we haven't reached the anniversary month yet
-            if (monthDiff < 0 || (monthDiff === 0 && currentDate.getDate() < startDate.getDate())) {
-                years--;
-            }
-            
-            document.getElementById('yearsOfExperience').textContent = years;
-        }
+    
+    <!-- Main Content -->
+    <div class="content">
+        <!-- About Card -->
+        <div class="card">
+            <h2 class="section-title">
+                <i class="fas fa-user"></i>
+                About Me
+            </h2>
+            <div class="section-content">
+                <p>I'm a Technical Lead with <span id="yearsOfExperience"></span> years of experience in mobile development, currently building and maintaining mobile SDKs at <span class="highlight"><a href="https://mixpanel.com/" target="_blank">Mixpanel</a></span> across Android, iOS, React Native, and Flutter platforms, designed to support large-scale customer deployments.</p>
+                <p>Previously, I led Android SDK engineering at <span class="highlight"><a href="https://blueshift.com/" target="_blank">Blueshift</a></span> where I focused on designing, developing, and maintaining our Android SDK and other cross-platform plugins. Before that, at Fortelogic and Bullfinch, I led engineering teams across EduTech, MedTech, E-commerce, and TravelTech domains.</p>
+                <p>With an MCA from <span class="highlight"><a href="http://www.nitc.ac.in/" target="_blank">NIT Calicut</a></span>, I bring a strong academic foundation to my technical expertise in building robust mobile solutions. Throughout my career, I've maintained hands-on development expertise in Android (Java/Kotlin), Flutter, and multiple cross-platform technologies. I'm passionate about creating high-quality mobile experiences that solve real business challenges while maintaining optimal performance and scalability.</p>
+            </div>
+        </div>
         
-        // Calculate on page load
-        calculateYearsOfExperience();
+        <!-- Skills Card -->
+        <div class="card">
+            <h2 class="section-title">
+                <i class="fas fa-code"></i>
+                Skills & Technologies
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-chip">Android</div>
+                <div class="skill-chip">iOS</div>
+                <div class="skill-chip">Flutter</div>
+                <div class="skill-chip">React Native</div>
+                
+                <!-- SDK Specific -->
+                <div class="skill-chip">Mobile SDKs</div>
+                <div class="skill-chip">SDK Architecture</div>
+                <div class="skill-chip">API Design</div>
+                <div class="skill-chip">Analytics</div>
+                <div class="skill-chip">Cross-platform</div>
+                
+                <!-- Customer Skills -->
+                <div class="skill-chip">Support</div>
+                <div class="skill-chip">Training</div>
+                <div class="skill-chip">Consulting</div>
+                <div class="skill-chip">Client Success</div>
+                
+                <!-- Communication -->
+                <div class="skill-chip">Tech Writing</div>
+                <div class="skill-chip">Integration</div>
+                <div class="skill-chip">Debugging</div>
+                <div class="skill-chip">Customer Care</div>
+
+                <!-- Technical Skills -->
+                <div class="skill-chip">CI/CD</div>
+                <div class="skill-chip">Git</div>
+                <div class="skill-chip">Unit Testing</div>
+                <div class="skill-chip">Optimization</div>                                
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        © <span id="currentYear"></span> Rahul Raveendran V P
+    </footer>
+    
+    <script>
+        // Calculate years of experience dynamically
+        const startYear = 2013;
+        const currentYear = new Date().getFullYear();
+        const yearsOfExperience = currentYear - startYear;
+        document.getElementById('yearsOfExperience').textContent = yearsOfExperience;
+        document.getElementById('currentYear').textContent = currentYear;
+        
+        // Fetch GitHub profile picture
+        fetch('https://api.github.com/users/rahulrvp')
+        .then(response => response.json())
+        .then(data => {
+            const profileImage = document.getElementById('profileImage');
+            if (data.avatar_url) {
+                profileImage.src = data.avatar_url;
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching GitHub profile:', error);
+            // Fallback to initials if fetch fails
+            const profilePic = document.querySelector('.profile-pic');
+            profilePic.innerHTML = '<div style="font-size: 42px; font-weight: 500; color: #4285F4;">RV</div>';
+        });
     </script>
 </body>
 </html>
